@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2e2ehrd6605n"]
+[gd_scene load_steps=7 format=3 uid="uid://c2e2ehrd6605n"]
 
 [ext_resource type="PackedScene" uid="uid://ck4gqrug1xqkh" path="res://Scenes/Bird.tscn" id="1_kln2b"]
 [ext_resource type="Script" uid="uid://cy4oai1s0n170" path="res://Scripts/Main.gd" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://b826vnjx42r60" path="res://Scenes/PipePair.tscn" id="2_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://ojveycg2fw16" path="res://Images/Background_2.png" id="4_rgh2o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kln2b"]
 font_size = 40
@@ -50,5 +51,15 @@ offset_right = 353.0
 offset_bottom = 36.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_rgh2o")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1024, 0)
+
+[node name="BackgroundSprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -1
+position = Vector2(500, 513)
+texture = ExtResource("4_rgh2o")
 
 [connection signal="pressed" from="GameOverUI/Restart" to="." method="_on_restart_pressed"]

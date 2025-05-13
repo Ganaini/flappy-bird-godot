@@ -5,6 +5,7 @@ extends Node2D
 @export var pipe_scene: PackedScene
 @export var spawn_time: float = 2.0
 @export var pipe_y_variation: float = 100.0
+@onready var parallax_bg = $ParallaxBackground
 
 var time_passed: float = 0.0
 var score: int = 0
@@ -14,6 +15,7 @@ func _process(delta: float) -> void:
 	if time_passed >= spawn_time:
 		spawn_pipe()
 		time_passed = 0.0
+	parallax_bg.scroll_offset.x -= 50 * delta  # adjust speed as needed
  
 func spawn_pipe():
 	var pipe = pipe_scene.instantiate()
