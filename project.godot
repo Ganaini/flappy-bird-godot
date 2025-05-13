@@ -15,6 +15,11 @@ run/main_scene="uid://c2e2ehrd6605n"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1000
+
 [editor]
 
 naming/scene_name_casing=1

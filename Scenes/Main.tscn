@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b826vnjx42r60" path="res://Scenes/PipePair.tscn" id="2_pbw6q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kln2b"]
-font_size = 100
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_rgh2o"]
 font_size = 24
@@ -24,31 +24,29 @@ pipe_scene = ExtResource("2_pbw6q")
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOverUI"]
-offset_left = -16.0
-offset_top = -13.0
-offset_right = 1190.0
-offset_bottom = 666.0
+offset_right = 678.0
+offset_bottom = 1000.0
 color = Color(0.00784314, 0.00784314, 0.00784314, 0.498039)
 
 [node name="Label" type="Label" parent="GameOverUI"]
-offset_left = 277.0
-offset_top = 230.0
-offset_right = 848.0
-offset_bottom = 367.0
+offset_left = 200.0
+offset_top = 320.0
+offset_right = 771.0
+offset_bottom = 457.0
 text = "Game Over!"
 label_settings = SubResource("LabelSettings_kln2b")
 
 [node name="Restart" type="Button" parent="GameOverUI"]
-offset_left = 433.0
+offset_left = 200.0
 offset_top = 422.0
-offset_right = 656.0
+offset_right = 423.0
 offset_bottom = 486.0
 text = "Restart"
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 481.0
+offset_left = 262.0
 offset_top = 2.0
-offset_right = 572.0
+offset_right = 353.0
 offset_bottom = 36.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_rgh2o")
