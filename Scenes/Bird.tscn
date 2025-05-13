@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://ck4gqrug1xqkh"]
+[gd_scene load_steps=17 format=3 uid="uid://ck4gqrug1xqkh"]
 
 [ext_resource type="Script" uid="uid://b5o5p5s2i2roe" path="res://Scripts/Bird.gd" id="1_rpcp7"]
 [ext_resource type="Texture2D" uid="uid://d0g0ofq4da0fl" path="res://Images/Bird.png" id="2_806kn"]
+[ext_resource type="AudioStream" uid="uid://dsjyqflku1h12" path="res://Sounds/flap_retro.wav" id="3_okd8w"]
+[ext_resource type="AudioStream" uid="uid://d3hkq408bxq5s" path="res://Sounds/score_retro.wav" id="4_okd8w"]
+[ext_resource type="AudioStream" uid="uid://cu06hno8860ka" path="res://Sounds/death_retro.wav" id="5_tto85"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2sqn"]
 atlas = ExtResource("2_806kn")
@@ -90,5 +93,14 @@ sprite_frames = SubResource("SpriteFrames_fhewd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Hitbox"]
 position = Vector2(158, 476)
 shape = SubResource("CircleShape2D_806kn")
+
+[node name="FlapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_okd8w")
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_okd8w")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tto85")
 
 [connection signal="area_entered" from="Area2D_Hitbox" to="." method="_on_area_2d_hitbox_area_entered"]
